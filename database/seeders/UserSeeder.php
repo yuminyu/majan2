@@ -31,10 +31,10 @@ class UserSeeder extends Seeder
                     'role'=>'attendant'
                 ],
                 [
-                    'name'=>'user(guest)',
-                    'email'=>'user(guest)@.com',
+                    'name'=>'user',
+                    'email'=>'user@user.com',
                     'password'=>Hash::make("testtest"),
-                    'role'=>'user(guest)'
+                    'role'=>'user'
                 ]
             ]
         );

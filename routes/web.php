@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JansotorokuController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,24 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::prefix('admin')
+->middleware('can:admin')
+->group(function(){
+    Route::get('index',function(){
+        return view('jansoRegister');
+    });
+});
+
+Route::post('jansotoroku',[JansotorokuController::class,'store']);
+Route::get('osusume',[JansotorokuController::class,'index']);
+
+Route::middleware('can:user-higher')
+->group(function(){
+    Route::get('index',function(){
+        dd('user');
+    });
 });
 
 Route::middleware([
