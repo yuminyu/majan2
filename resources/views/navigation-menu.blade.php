@@ -7,7 +7,8 @@
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
                         <div class="w-20">
-                        <x-jet-application-mark class="block h-9 w-auto" />
+                        <img alt="content" class="block h-9 w-auto" src="{{asset("images/logo.png")}}">
+                        
                         </div>
                     </a>
                 </div>
