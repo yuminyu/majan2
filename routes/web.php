@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JansotorokuController; 
+use App\Http\Controllers\EventController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -29,12 +30,9 @@ Route::prefix('admin')
 Route::post('jansotoroku',[JansotorokuController::class,'store']);
 Route::get('osusume',[JansotorokuController::class,'index']);
 
-Route::middleware('can:user-higher')
-->group(function(){
-    Route::get('index',function(){
-        dd('user');
-    });
-});
+Route::resource('events',EventController::class);
+
+
 
 Route::middleware([
     'auth:sanctum',

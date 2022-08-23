@@ -32,7 +32,7 @@
                             </div>
                             <h2 class="text-xl font-medium title-font text-gray-900 mt-5">アテンド可能なイベント一覧</h2>
                             <p class="text-base leading-relaxed mt-2">Swag shoivdigoitch literally meditation subway tile tumblr cold-pressed. Gastropub street art beard dreamcatcher neutra, ethical XOXO lumbersexual.</p>
-                            <a class="text-indigo-500 inline-flex items-center mt-3">見てみる
+                            <a href="{{route('events.index')}}" :active="request()->routels('events.index')" class="text-indigo-500 inline-flex items-center mt-3">見てみる
                             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                                 <path d="M5 12h14M12 5l7 7-7 7"></path>
                             </svg>
