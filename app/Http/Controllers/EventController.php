@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreEventRequest;
 use App\Http\Requests\UpdateEventRequest;
 use App\Models\Event;
+use App\Models\Janso;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class EventController extends Controller
 {
@@ -30,7 +33,10 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        $user = Auth::user();
+        $jansos = DB::table('jansos')->get();
+        //dd($jansos);
+        return view('events.create',compact('user','jansos'));
     }
 
     /**
@@ -41,7 +47,31 @@ class EventController extends Controller
      */
     public function store(StoreEventRequest $request)
     {
-        //
+        $user = Auth::user();
+        $attendJansoID = $request->attendJanso;
+        $attendJansoName = DB::table('jansos')->where('id', $attendJansoID)->value('name');
+        $eventDate = $request->eventDate;
+        $startTime = $request->startTime;
+        $endTime = $request->endTime;
+
+        $start = $eventDate." ".$startTime;
+        $startDate = Carbon::createFromFormat('Y-m-d H:i',$start);
+        
+        $end = $eventDate." ".$endTime;
+        $endDate = Carbon::createFromFormat('Y-m-d H:i',$end);
+        
+        Event::create([
+            'attendantId' => $user->id,
+            'attendantName' => $user->name,
+            'jansoId' => $attendJansoID,
+            'jansoName' => $attendJansoName,
+            'maxPeople' => 1,
+            'startDate' => $startDate,
+            'endDate' => $endDate,
+            'is_visible' => 1,
+        ]);
+
+        return view('dashboard');
     }
 
     /**

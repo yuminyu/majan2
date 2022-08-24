@@ -45,7 +45,7 @@
                             </div>
                             <h2 class="text-xl font-medium title-font text-gray-900 mt-5">アテンドイベントを登録する</h2>
                             <p class="text-base leading-relaxed mt-2">Swag shoivdigoitch literally meditation subway tile tumblr cold-pressed. Gastropub street art beard dreamcatcher neutra, ethical XOXO lumbersexual.</p>
-                            <a class="text-indigo-500 inline-flex items-center mt-3">見てみる
+                            <a href="{{route('events.create')}}" class="text-indigo-500 inline-flex items-center mt-3">登録フォームにGO
                             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                                 <path d="M5 12h14M12 5l7 7-7 7"></path>
                             </svg>
@@ -59,7 +59,7 @@
                             </div>
                             <h2 class="text-xl font-medium title-font text-gray-900 mt-5">アテンドになる</h2>
                             <p class="text-base leading-relaxed mt-2">Swag shoivdigoitch literally meditation subway tile tumblr cold-pressed. Gastropub street art beard dreamcatcher neutra, ethical XOXO lumbersexual.</p>
-                            <a class="text-indigo-500 inline-flex items-center mt-3">見てみる
+                            <a class="text-indigo-500 inline-flex items-center mt-3">なってみる！
                             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                                 <path d="M5 12h14M12 5l7 7-7 7"></path>
                             </svg>
