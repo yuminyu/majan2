@@ -8,7 +8,7 @@
     ]
   },
   "resources/js/flatpickr.js": {
-    "file": "assets/flatpickr.e8ebb647.js",
+    "file": "assets/flatpickr.00e76e2e.js",
     "src": "resources/js/flatpickr.js",
     "isEntry": true,
     "imports": [
@@ -19,7 +19,7 @@
     "file": "assets/_commonjsHelpers.b8add541.js"
   },
   "resources/css/app.css": {
-    "file": "assets/app.187b4d48.css",
+    "file": "assets/app.2efde31e.css",
     "src": "resources/css/app.css",
     "isEntry": true
   }
