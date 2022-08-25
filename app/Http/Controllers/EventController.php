@@ -9,6 +9,7 @@ use App\Models\Janso;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use App\Services\EventService;
 
 class EventController extends Controller
 {
