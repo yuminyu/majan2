@@ -12,25 +12,27 @@ use Carbon\Carbon;
 
 class EventController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
+
+        // $reservedPeople = DB::table('reservations')
+        // ->select('event_id',DB::raw('sum(number_of_people) as number_of_people'))
+        // ->groupBy('event_id');
+
+        //dd($reservedPeople);
+
+        $today = Carbon::today();
+
         $events = DB::table('events')
+                    ->whereDate('startDate','>=',$today)
                     ->orderBy('startDate','asc')
                     ->paginate(10);
 
         return view('events.index',compact('events'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         $user = Auth::user();
@@ -39,12 +41,7 @@ class EventController extends Controller
         return view('events.create',compact('user','jansos'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreEventRequest  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(StoreEventRequest $request)
     {
         $user = Auth::user();
@@ -74,46 +71,48 @@ class EventController extends Controller
         return view('dashboard');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Event  $event
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Event $event)
     {
-        //
+
+        $event = Event::findOrFail($event->id);
+
+        $users = $event->users;
+        
+        $reservations = [];
+        foreach($users as $user){
+            $reservedInfo = [
+                'name' => $user->name,
+                'number_of_people' => $user->pivot->number_of_people,
+                'canceled_date' => $user->pivot->canceled_date
+            ];
+
+            array_push($reservations,$reservedInfo);
+        }
+        //dd($reservations);
+        return view('events.show',compact('users','event','reservations'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Event  $event
-     * @return \Illuminate\Http\Response
-     */
+    public function past(){
+        $today = Carbon::today();
+        $events = DB::table('events')
+        ->whereDate('startDate','<',$today)
+        ->orderBy('startDate','desc')
+        ->paginate(10);
+
+        return view('events.past',compact('events'));
+    }
+
     public function edit(Event $event)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateEventRequest  $request
-     * @param  \App\Models\Event  $event
-     * @return \Illuminate\Http\Response
-     */
     public function update(UpdateEventRequest $request, Event $event)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Event  $event
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Event $event)
     {
         //

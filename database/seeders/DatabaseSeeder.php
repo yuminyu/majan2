@@ -21,15 +21,15 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-
         $this->call([
             UserSeeder::class,
+            JansoSeeder::class
         ]);
-
-        $this->call([
-            JansoSeeder::class,
-        ]);
-
+        
         Event::factory(100)->create();
+        
+        $this->call([
+            ReservationSeeder::class
+        ]);
     }
 }

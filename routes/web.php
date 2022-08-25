@@ -30,6 +30,7 @@ Route::prefix('admin')
 Route::post('jansotoroku',[JansotorokuController::class,'store']);
 Route::get('osusume',[JansotorokuController::class,'index']);
 
+Route::get('events/past',[EventController::class,'past'])->name('events.past');
 Route::resource('events',EventController::class);
 
 
