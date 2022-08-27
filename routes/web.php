@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JansotorokuController; 
 use App\Http\Controllers\EventController; 
+use App\Http\Controllers\ReservationController; 
+use App\Http\Controllers\MyPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +18,7 @@ use App\Http\Controllers\EventController;
 */
 
 Route::get('/', function () {
-    return view('calendar');
+    return view('welcome');
 });
 
 Route::prefix('admin')
@@ -43,4 +45,16 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('/calendar', function () {
+        return view('calendar');
+    })->name('calendar');
 });
+
+Route::get('/mypage',[MyPageController::class,'index'])->name('mypage.index');
+
+//dashboardより下にしないと４０４だった、、、
+Route::get('/{id}',[ReservationController::class,'detail'])->name('events.detail');
+Route::post('/{id}',[ReservationController::class,'reserve'])->name('events.reserve');
+
+
+Route::get('/mypage',[MyPageController::class,'index'])->name('mypage.index');
