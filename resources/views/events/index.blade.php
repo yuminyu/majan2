@@ -14,7 +14,6 @@
             <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">定員</th>
             <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">集合時間</th>
             <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">解散時間</th>
-            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">表示・非表示</th>
           </tr>
         </thead>
         <tbody>
@@ -25,7 +24,6 @@
             <td class="px-4 py-3">{{$event->maxPeople}}</td>
             <td class="px-4 py-3">{{$event->startDate}}</td>
             <td class="px-4 py-3">{{$event->endDate}}</td>
-            <td class="px-4 py-3">{{$event->is_visible}}</td>
           </tr>
         @endforeach
         </tbody>

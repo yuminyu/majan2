@@ -19,10 +19,17 @@
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('calendar') }}" :active="request()->routeIs('calendar')">
-                        イベントカレンダー
+                    <x-jet-nav-link href="{{ route('mypage.index') }}" :active="request()->routeIs('mypage.index')">
+                        予約済みイベントの一覧
                     </x-jet-nav-link>
                 </div>
+                @can('admin')
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('events.index') }}" :active="request()->routeIs('events.index')">
+                        イベント一覧管理
+                    </x-jet-nav-link>
+                </div>
+                @endcan
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">

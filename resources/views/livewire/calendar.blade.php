@@ -11,13 +11,14 @@
         <x-calendar-time/>
         @for($i = 0; $i<7; $i++)
         <div class="w-32">
-            <div class="py-1 px-2 border border-gray-200 text-center">{{$currentWeek[$i]['day']}}</div>
-            
             @if($currentWeek[$i]['dayOfWeek'] === "土曜日")
+            <div class="text-blue-500 py-1 px-2 border border-gray-200 text-center">{{$currentWeek[$i]['day']}}</div>
             <div class="text-blue-500 py-1 px-2 border border-gray-200 text-center">{{$currentWeek[$i]['dayOfWeek']}}</div>
             @elseif($currentWeek[$i]['dayOfWeek'] === "日曜日")
+            <div class="text-red-500 py-1 px-2 border border-gray-200 text-center">{{$currentWeek[$i]['day']}}</div>
             <div class="text-red-500 py-1 px-2 border border-gray-200 text-center">{{$currentWeek[$i]['dayOfWeek']}}</div>
             @else
+            <div class="py-1 px-2 border border-gray-200 text-center">{{$currentWeek[$i]['day']}}</div>
             <div class="py-1 px-2 border border-gray-200 text-center">{{$currentWeek[$i]['dayOfWeek']}}</div>
             @endif
 
