@@ -5,6 +5,7 @@ use App\Http\Controllers\JansotorokuController;
 use App\Http\Controllers\EventController; 
 use App\Http\Controllers\ReservationController; 
 use App\Http\Controllers\MyPageController;
+use App\Http\Controllers\BeAttendantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,8 @@ Route::middleware([
 });
 
 Route::get('/mypage',[MyPageController::class,'index'])->name('mypage.index');
+
+Route::get('/beAttendant',[BeAttendantController::class,'index']);
 
 //dashboardより下にしないと４０４だった、、、
 Route::get('/{id}',[ReservationController::class,'detail'])->name('events.detail');
