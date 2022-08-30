@@ -30,6 +30,13 @@
                     </x-jet-nav-link>
                 </div>
                 @endcan
+                @can('admin')
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('jansoRegister') }}" :active="request()->routeIs('jansoRegister')">
+                        雀荘登録
+                    </x-jet-nav-link>
+                </div>
+                @endcan
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">

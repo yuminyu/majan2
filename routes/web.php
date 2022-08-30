@@ -21,13 +21,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('admin')
-->middleware('can:admin')
-->group(function(){
-    Route::get('index',function(){
-        return view('jansoRegister');
-    });
-});
+
+
 
 Route::post('jansotoroku',[JansotorokuController::class,'store']);
 Route::get('osusume',[JansotorokuController::class,'index']);
@@ -48,6 +43,9 @@ Route::middleware([
     Route::get('/calendar', function () {
         return view('calendar');
     })->name('calendar');
+    Route::get('/jansoRegister', function () {
+        return view('jansoRegister');
+    })->name('jansoRegister');
 });
 
 Route::get('/mypage',[MyPageController::class,'index'])->name('mypage.index');
