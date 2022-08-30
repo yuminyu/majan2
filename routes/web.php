@@ -28,6 +28,8 @@ Route::get('/', function () {
 Route::post('jansotoroku',[JansotorokuController::class,'store']);
 Route::get('osusume',[JansotorokuController::class,'index']);
 
+Route::get('/beAttendant',[BeAttendantController::class,'index']);
+
 Route::get('events/past',[EventController::class,'past'])->name('events.past');
 Route::resource('events',EventController::class);
 
@@ -51,7 +53,7 @@ Route::middleware([
 
 Route::get('/mypage',[MyPageController::class,'index'])->name('mypage.index');
 
-Route::get('/beAttendant',[BeAttendantController::class,'index']);
+
 
 //dashboardより下にしないと４０４だった、、、
 Route::get('/{id}',[ReservationController::class,'detail'])->name('events.detail');
