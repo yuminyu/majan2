@@ -20,6 +20,7 @@ class JansotorokuController extends Controller
         $janso->yasusa = $request->yasusa;
         $janso->mataikitai = $request->mataikitai;
         $janso->location = $request->location;
+        $janso->url = $request->url;
         
         $imgfile = $request->file('jansougazou');
 

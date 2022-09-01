@@ -21,7 +21,7 @@
                         <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
                         <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
                             <div class="rounded-lg h-64 overflow-hidden">
-                            <img alt="content" class="object-cover object-center h-full w-full" src="{{asset("images/logo.png")}}">
+                            <img alt="content" class="object-cover object-center h-full w-full" src="{{asset("images/shop.jpg")}}">
                             </div>
                             <h2 class="text-xl font-medium title-font text-gray-900 mt-5">管理人オススメの雀荘</h2>
                             <p class="text-base leading-relaxed mt-2">吸わない、賭けない、清潔の雀荘を管理人が選抜して紹介！</p>
@@ -33,7 +33,7 @@
                         </div>
                         <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
                             <div class="rounded-lg h-64 overflow-hidden">
-                            <img alt="content" class="object-cover object-center h-full w-full" src="{{asset("images/logo.png")}}">
+                            <img alt="content" class="object-cover object-center h-full w-full" src="{{asset("images/risingsun.jpg")}}">
                             </div>
                             <h2 class="text-xl font-medium title-font text-gray-900 mt-5">アテンダント予約申請</h2>
                             <p class="text-base leading-relaxed mt-2">アテンダントが登録したイベントに予約して雀荘にアテンドしてもらおう！</p>
@@ -46,7 +46,7 @@
                         @can('attendant-higher')
                         <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
                             <div class="rounded-lg h-64 overflow-hidden">
-                            <img alt="content" class="object-cover object-center h-full w-full" src="{{asset("images/logo.png")}}">
+                            <img alt="content" class="object-cover object-center h-full w-full" src="{{asset("images/register.jpg")}}">
                             </div>
                             <h2 class="text-xl font-medium title-font text-gray-900 mt-5">アテンドイベントを登録する</h2>
                             <p class="text-base leading-relaxed mt-2">アテンダントしてイベントを登録してみよう！</p>
@@ -60,7 +60,7 @@
                         @can('user-only')
                         <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
                             <div class="rounded-lg h-64 overflow-hidden">
-                            <img alt="content" class="object-cover object-center h-full w-full" src="{{asset("images/logo.png")}}">
+                            <img alt="content" class="object-cover object-center h-full w-full" src="{{asset("images/register.jpg")}}">
                             </div>
                             <h2 class="text-xl font-medium title-font text-gray-900 mt-5">アテンドになる</h2>
                             <p class="text-base leading-relaxed mt-2">アテンダントになってイベントを登録できるようにしよう！</p>

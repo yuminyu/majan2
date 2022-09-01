@@ -22,9 +22,13 @@
         </div>
         <div class="p-4 md:w-1/3">
             <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-            <iframe src="{{$janso->location}}" width="450" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <div class="p-6">
-                    <h1 class="title-font text-lg font-medium text-gray-900 mb-3">雀荘の地図</h1>
+                    <h1 class="title-font text-lg font-medium text-gray-900 mb-3">雀荘の場所</h1>
+                    <p class="leading-relaxed mb-3 mt-5">{{$janso->location}}</p>
+                </div>
+                <div class="p-6">
+                    <h1 class="title-font text-lg font-medium text-gray-900 mb-3 ">URL</h1>
+                    <p class="text-blue-400"><a href="{{$janso->url}}">{{$janso->url}}</a></p>
                 </div>
             </div>
         </div>

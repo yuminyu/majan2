@@ -23,6 +23,7 @@ return new class extends Migration
             $table->integer('mataikitai')->nullable();
             $table->string('location')->nullable();
             $table->string('jansougazou')->nullable();
+            $table->string('url')->nullable();
             $table->timestamps();
         });
     }
