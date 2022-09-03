@@ -1,6 +1,5 @@
 <x-app-layout>
-<p>過去のイベント一覧</p>
-<a class="text-blue-500" href="/events">一覧に戻る→</a>
+<p>過去のイベント一覧です</p>
 <div class="py-2">
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
