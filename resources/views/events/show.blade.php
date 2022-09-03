@@ -20,7 +20,7 @@
     <!--@if(strtotime($event->startDate) >= strtotime(\Carbon\Carbon::today()->format('Y-m-d H:i:s')))-->
     <div class="flex items-center justify-start mt-4">
         <x-jet-button class="ml-4">
-        <a href="/events">戻る</a>
+        <a href="events">戻る</a>
         </x-jet-button>
     </div>
     <!--@endif-->
