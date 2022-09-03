@@ -1,5 +1,5 @@
 <x-app-layout>
-<a href="events/past">過去のイベント一覧→</a>
+<p>現在有効な登録中のすべてのイベントの一覧です。</p>
 <div class="py-2">
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -33,4 +33,5 @@
 </div>
 </div>
 </section>
+<a href="events/past" class="text-blue-500">過去のイベント一覧→</a>
 </x-app-layout>
