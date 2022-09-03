@@ -16,14 +16,6 @@
     <p>{{$event->endDate}}</p>
     </div>
 
-    <!-- 今日より前の集合時間の場合は編集できないようにする-->
-    <!--@if(strtotime($event->startDate) >= strtotime(\Carbon\Carbon::today()->format('Y-m-d H:i:s')))-->
-    <div class="flex items-center justify-start mt-4">
-        <x-jet-button class="ml-4">
-        <a href="dashboard">戻る</a>
-        </x-jet-button>
-    </div>
-    <!--@endif-->
 
 @if(!$users->isEmpty())
 予約状況
