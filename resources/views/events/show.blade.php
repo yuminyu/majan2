@@ -1,32 +1,29 @@
 <x-app-layout>
-<form method="get" action="{{ route('events.edit',['event'=>$event->id]) }}">
-
-
     <div class="mt-4">
-        {{$event->attendantName}}
+    <p>アテンダント名</p>
+    <p>{{$event->attendantName}}</p>
     </div>
     <div class="mt-4">
-        {{$event->jansoName}}
+    <p>アテンド雀荘</p>
+    <p>{{$event->jansoName}}</p>
     </div>
     <div class="mt-4">
-        {{$event->maxPeople}}
+    <p>集合時間</p>
+    <p>{{$event->startDate}}</p>
     </div>
     <div class="mt-4">
-        {{$event->startDate}}
-    </div>
-    <div class="mt-4">
-        {{$event->endDate}}
+    <p>解散時間</p>
+    <p>{{$event->endDate}}</p>
     </div>
 
     <!-- 今日より前の集合時間の場合は編集できないようにする-->
-    @if(strtotime($event->startDate) >= strtotime(\Carbon\Carbon::today()->format('Y-m-d H:i:s')))
+    <!--@if(strtotime($event->startDate) >= strtotime(\Carbon\Carbon::today()->format('Y-m-d H:i:s')))-->
     <div class="flex items-center justify-start mt-4">
         <x-jet-button class="ml-4">
-            編集
+        <a href="/events">戻る</a>
         </x-jet-button>
     </div>
-    @endif
-</form>
+    <!--@endif-->
 
 @if(!$users->isEmpty())
 予約状況
@@ -40,7 +37,6 @@
         <thead>
           <tr>
             <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">予約者名前</th>
-            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">予約数</th>
           </tr>
         </thead>
         <tbody>
@@ -48,7 +44,6 @@
         @if(is_null($reservation['canceled_date']))
           <tr>
             <td class="px-4 py-3">{{$reservation['name']}}</td>
-            <td class="px-4 py-3">{{$reservation['number_of_people']}}</td>
           </tr>
         @endif
         @endforeach

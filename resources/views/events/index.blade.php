@@ -11,7 +11,6 @@
           <tr>
             <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">アテンダント名</th>
             <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">雀荘</th>
-            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">定員</th>
             <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">集合時間</th>
             <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">解散時間</th>
           </tr>
@@ -21,7 +20,6 @@
           <tr>
             <td class="text-blue-500 px-4 py-3"><a href="{{route('events.show',['event' => $event->id])}}">{{$event->attendantName}}</td>
             <td class="px-4 py-3">{{$event->jansoName}}</td>
-            <td class="px-4 py-3">{{$event->maxPeople}}</td>
             <td class="px-4 py-3">{{$event->startDate}}</td>
             <td class="px-4 py-3">{{$event->endDate}}</td>
           </tr>

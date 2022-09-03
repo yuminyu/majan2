@@ -9,9 +9,6 @@
         {{$event->jansoName}}
     </div>
     <div class="mt-4">
-        {{$event->maxPeople}}
-    </div>
-    <div class="mt-4">
         {{$event->startDate}}
     </div>
     <div class="mt-4">

@@ -14,7 +14,7 @@
                             <div class="w-24 h-full bg-indigo-500"></div>
                         </div>
                         <div class="flex flex-wrap sm:flex-row flex-col py-3 mb-8">
-                            <h1 class="sm:w-2/5 text-gray-900 font-medium title-font text-2xl mb-2 sm:mb-0">麻雀アテンダント</h1>
+                            <h1 class="sm:w-2/5 text-gray-900 font-medium title-font text-2xl mb-2 sm:mb-0">Janso〜健康的な雀荘デビューを応援〜</h1>
                             <p class="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">アテンダントに雀荘へ連れて行ってもらおう！雀荘は管理人オススメだから安心！</p>
                         </div>
                         </div>
