@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Janso</title>
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -19,22 +19,33 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+                @vite(['resources/css/app.css', 
+                'resources/js/app.js',
+                'resources/js/flatpickr.js',
+            ])
     </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+<body class="antialiased">
+<section class="text-gray-600 body-font">
+  <div class="container mx-auto flex px-5  items-center justify-center flex-col">
+    <img class="lg:w-2/6 md:w-3/6 w-5/6 mt-10 mb-10 object-cover object-center rounded" alt="hero" src="{{asset("images/welcome.jpg")}}">
+    <div class="text-center lg:w-2/3 w-full">
+      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Janso</h1>
+      <p class="mb-4 leading-relaxed">フリー雀荘に慣れている麻雀アテンダントによる雀荘デビュー応援サイト。<br>賭けない、吸わない雀荘のみ。健康で楽しいフリーデビューをしましょう</p>
+      @if (Route::has('login'))
+      <div class="flex justify-center">
+      @auth
+      <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"><a href="{{ url('/dashboard') }}">ダッシュボード</a></button>
+      @else
+        <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"><a href="{{ route('login') }}">ログイン</a></button>
+        @if (Route::has('register'))
+        <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"> <a href="{{ route('register') }}">新規登録</a></button>
+        @endif
+        @endauth
+      </div>
+      @endif
+    </div>
+  </div>
+</section>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-        </div>
-    </body>
+</body>
 </html>
