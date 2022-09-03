@@ -18,9 +18,6 @@
 
 
 @if(!$users->isEmpty())
-<h1>
-予約状況
-</h1>
 <div class="py-2">
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -30,7 +27,7 @@
       <table class="table-auto w-full text-left whitespace-no-wrap">
         <thead>
           <tr>
-            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">予約者名前</th>
+            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">予約状況・予約者名前</th>
           </tr>
         </thead>
         <tbody>
@@ -50,4 +47,32 @@
 </div>
 </section>
 @endif
+
+@if($users->isEmpty())
+<div class="py-2">
+<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+<div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+<section class="text-gray-600 body-font">
+<div class="container px-5 py-6 mx-auto">
+    <div class="lg: w-full mx-auto overflow-auto">
+      <table class="table-auto w-full text-left whitespace-no-wrap">
+        <thead>
+          <tr>
+            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">予約状況・予約者名前</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="px-4 py-3">予約者はいません</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</section>
+@endif
+
 </x-app-layout>

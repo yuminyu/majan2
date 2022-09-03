@@ -15,15 +15,27 @@ flatpickr("#calendar", {
 });
 
 // 時間表示、カレンダー非表示、24時間表記
-const setting = {
+const start_setting = {
     "locale" : Japanese,
     enableTime: true, 
     noCalendar: true, 
     dateFormat: "H:i", 
     time_24hr: true,
     minTime: "10:00",
-    maxTime: "20:00",
-    minuteIncrement:"30"
+    maxTime: "19:00",
+    minuteIncrement:"60"
 }
-flatpickr("#startTime", setting);
-flatpickr("#endTime", setting); 
+
+const end_setting = {
+    "locale" : Japanese,
+    enableTime: true, 
+    noCalendar: true, 
+    dateFormat: "H:i", 
+    time_24hr: true,
+    minTime: "11:00",
+    maxTime: "20:00",
+    minuteIncrement:"60"
+}
+
+flatpickr("#startTime", start_setting);
+flatpickr("#endTime", end_setting); 

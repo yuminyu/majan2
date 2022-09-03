@@ -6,6 +6,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\ReservationController; 
 use App\Http\Controllers\MyPageController;
 use App\Http\Controllers\BeAttendantController;
+use App\Http\Controllers\MyEventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,7 +51,7 @@ Route::middleware([
         return view('jansoRegister');
     })->name('jansoRegister');
 });
-
+Route::get('/myevent',[MyEventController::class,'index'])->name('myevent.index');
 Route::get('/mypage',[MyPageController::class,'index'])->name('mypage.index');
 
 
@@ -60,4 +61,3 @@ Route::get('/{id}',[ReservationController::class,'detail'])->name('events.detail
 Route::post('/{id}',[ReservationController::class,'reserve'])->name('events.reserve');
 
 
-Route::get('/mypage',[MyPageController::class,'index'])->name('mypage.index');

@@ -23,6 +23,13 @@
                         予約済みイベントの一覧
                     </x-jet-nav-link>
                 </div>
+                @can('attendant-higher')
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('myevent.index') }}" :active="request()->routeIs('myevent.index')">
+                        自分のイベントの予約状況
+                    </x-jet-nav-link>
+                </div>
+                @endcan
                 @can('admin')
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('events.index') }}" :active="request()->routeIs('events.index')">

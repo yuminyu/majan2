@@ -3,16 +3,20 @@
     @csrf
 
     <div class="mt-4">
-        {{$event->attendantName}}
+    <p>アテンダント名</p>
+    <p>{{$event->attendantName}}</p>
     </div>
     <div class="mt-4">
-        {{$event->jansoName}}
+    <p>アテンド雀荘</p>
+    <p>{{$event->jansoName}}</p>
     </div>
     <div class="mt-4">
-        {{$event->startDate}}
+    <p>集合時間</p>
+    <p>{{$event->startDate}}</p>
     </div>
     <div class="mt-4">
-        {{$event->endDate}}
+    <p>解散時間</p>
+    <p>{{$event->endDate}}</p>
     </div>
 
     <input type="hidden" name="id" value="{{$event->id}}">

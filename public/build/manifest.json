@@ -1,6 +1,6 @@
 {
   "resources/js/app.js": {
-    "file": "assets/app.5a064182.js",
+    "file": "assets/app.3e50b87d.js",
     "src": "resources/js/app.js",
     "isEntry": true,
     "imports": [
@@ -8,7 +8,7 @@
     ]
   },
   "resources/js/flatpickr.js": {
-    "file": "assets/flatpickr.00e76e2e.js",
+    "file": "assets/flatpickr.6423c3cb.js",
     "src": "resources/js/flatpickr.js",
     "isEntry": true,
     "imports": [
